@@ -1,16 +1,5 @@
 /*
-    * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
-
-    *
+ * There is a entire series of these questions BTTBASS I II III IV
+ * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+ * This question is moved to Dynamic programming section.
 */
-
-#include <bits/stdc++.h>
-using namespace std;
-
-class Solution
-{
-  public:
-    int maxProfit(vector<int> &prices)
-    {
-    }
-};
