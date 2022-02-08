@@ -1,6 +1,8 @@
 /*
+    Problems Links : (Similar)
     * https://leetcode.com/problems/3sum/
     * https://practice.geeksforgeeks.org/problems/triplet-sum-in-array-1587115621/1
+    * Strongly recemmonded to solve : https://practice.geeksforgeeks.org/problems/find-triplets-with-zero-sum/1/
 
     * Solutions:
     * https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/
@@ -97,12 +99,6 @@ class Bruteforce // O(size^3) & S(1)
 
 int main()
 {
-    cin.tie(0)->sync_with_stdio(0);
-    cout.tie(0);
-#ifndef ONLINE_JUDGE
-    freopen("C://450DSA//i.txt", "r", stdin);
-    freopen("C://450DSA//e.txt", "w+", stderr);
-#endif
     int T;
     cin >> T;
     while (T--)
