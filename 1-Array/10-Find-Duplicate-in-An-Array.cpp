@@ -5,10 +5,30 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+
+class NaiveApproach
+{
+
+    // We will sort the array and then we can just compare the adjacent elements and return the duplicate number
+
+public:
+    int findDuplicate(vector<int> &nums)
+    {
+        sort(nums.begin(), nums.end());
+
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[i] == nums[i + 1])
+                return nums[i];
+        }
+        return -1;
+    }
+};
+
 class FloydAlgorithm // O(n) & S(1);
 {
     // cycle detection. https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare
-  public:
+public:
     int findDuplicate(vector<int> &nums)
     {
         int slow = nums[0], fast = nums[0];
@@ -36,47 +56,45 @@ class FloydAlgorithm // O(n) & S(1);
 
 class NegativeMarkingSolution // O(n) & S(1)
 {
-    // as the numbers are from 1-n only.
-    // we will flip the ith postion number sign
-    // if that number is alrady filled then that is the duplicate element;
-  public:
+    /*
+        Since the numbers are [1:N], so we use the array indices for storing the
+        visited state of each number, only the duplicate will be visited twice.
+        For each number we goto its index position and multiply by -1. In case
+        of duplicate it will be multiplied twice and the number will be +ve.
+      */
+
+public:
     int findDuplicate(vector<int> &nums)
     {
-        int duplicate = -1;
         for (int i = 0; i < nums.size(); i++)
         {
-            int curr = abs(nums[i]);
-            if (nums[curr] < 0)
-            {
-                duplicate = curr;
-                break;
-            }
-            nums[curr] *= -1;
+            int index = abs(nums[i]) - 1;
+
+            // mark as visited
+
+            nums[index] *= -1;
+
+            // incase of duplicate, this will become +ve
+
+            if (nums[index] > 0)
+                return abs(nums[i]);
         }
-        // we can also restore the original array
-        // by taking mod of all the values in it.
-        /*
-            for(auto& num : nums)
-                num = abs(num);
-        */
-        return duplicate;
+        return -1;
     }
 };
 
 void solve()
 {
+    vector<int> nums = {1, 2, 4, 4, 3};
+    NaiveApproach O1;
+    cout << O1.findDuplicate(nums);
 }
 
 int main()
 {
-    cin.tie(0)->sync_with_stdio(0);
-    cout.tie(0);
-#ifndef ONLINE_JUDGE
-    freopen("i.txt", "r", stdin);
-    freopen("e.txt", "w+", stderr);
-#endif
+
     int T = 1;
-    cin >> T;
+    // cin >> T;
     while (T--)
         solve();
 }

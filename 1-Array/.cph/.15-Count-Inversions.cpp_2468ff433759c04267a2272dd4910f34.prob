@@ -1,0 +1,1 @@
+{"name":"Local: 15-Count-Inversions","url":"/home/yashaswa/450DSA/1-Array/15-Count-Inversions.cpp","tests":[{"id":1644382964305,"input":"5\n2 4 1 3 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/yashaswa/450DSA/1-Array/15-Count-Inversions.cpp","group":"local","local":true}

@@ -67,8 +67,10 @@ class ObservationSolution // O((m+n)log(n+m))
 
 class MergeWithoutExtraSpace // O(n * m) && S(1)
 {
+
     // using insertion sort as a sub-routine.
     // using two pointer to comapre and swap then sort the second list in O(N) using insertion sort.
+
   private:
     void merge(int arr1[], int arr2[], int n, int m)
     {
@@ -76,6 +78,7 @@ class MergeWithoutExtraSpace // O(n * m) && S(1)
         {
 
             // we will insert (sort) the arr2[i] in arr1. we will save last value of arr1.
+
             int j = n - 2, last = arr1[n - 1];
 
             while (j >= 0 && arr1[j] > arr2[i])
@@ -92,6 +95,9 @@ class MergeWithoutExtraSpace // O(n * m) && S(1)
         }
     }
 };
+
+
+//Refer to the merge function of Merge Sort to understand this
 
 class ExtraSpaceAllowed // O(N+M) & S(N+M)
 {
