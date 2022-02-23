@@ -4,11 +4,10 @@ using namespace std;
 /*
     Problem : Given a binary tree, connect the nodes that are at same level.
 
-
-       10                          10 ------> NULL
-      / \                       /     \
-     3   5         =>         3 ------> 5 --------> NULL
-    / \     \               /  \        \
+       10                       10 ------> NULL
+      / \                     /     \
+     3   5         =>       3 ------> 5 --------> NULL
+    / \    \               /  \        \
    4   1   2              4 --> 1 -----> 2 -------> NULL
 
     Problem Links :
@@ -21,7 +20,7 @@ class BFS // O(N) && S(Width of the tree)
     // in this method we transverse the tree using level order traversal from right to left
     // using the pointer to the previous element (i.e. next right) we go-on linking the tree nodes
     // we iterate from right to left so that we can mark the next of edge node as NULL first
-public:
+  public:
     Node *connect(Node *root)
     {
         if (!root)
@@ -55,8 +54,8 @@ class DFS // O(N) && S(logN)
 {
     // in this method we transverse the tree using pre order traversal recursively
     // connecting the links to the child nodes at each level
-    // first we connect the left child next to right, then 
-public:
+    // first we connect the left child next to right, then
+  public:
     Node *connect(Node *root)
     {
         if (!root)
@@ -77,16 +76,21 @@ public:
 
 class Node
 {
-public:
+  public:
     int val;
     Node *left;
     Node *right;
     Node *next;
 
-    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
+    Node() : val(0), left(NULL), right(NULL), next(NULL)
+    {
+    }
 
-    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL)
+    {
+    }
 
-    Node(int _val, Node *_left, Node *_right, Node *_next)
-        : val(_val), left(_left), right(_right), next(_next) {}
+    Node(int _val, Node *_left, Node *_right, Node *_next) : val(_val), left(_left), right(_right), next(_next)
+    {
+    }
 };
