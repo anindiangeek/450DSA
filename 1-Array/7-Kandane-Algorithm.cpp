@@ -11,11 +11,35 @@ using namespace std;
 
 */
 
+class ImprovedKadandeAlgorithm
+{
+public:
+    int MSS(vector<int> &nums)
+    {
+       //In this method we don't have to count the number of negative values as it already takes the maximum possible negative value present in the array
+        
+        int maxendinghere = 0, sum = INT_MIN;
+
+        for (int i = 0; i < nums.size(); i++)
+        {
+            maxendinghere += nums[i];
+
+            if (sum < maxendinghere)
+                sum = maxendinghere;
+
+            if (maxendinghere < 0)
+                maxendinghere = 0;
+        }
+
+        return sum;
+    }
+};
+
 class KadaneAlgorithm // O(N) & S(1)
 {
     // this algorithm works only when there is atleast one positive number in array.
     // if all the numbers in an array can be negative then we have to check it and return the max number as the answer.
-  public:
+public:
     int64_t MaxSumSubArray(int arr[], int n)
     {
         int64_t sum = 0, NegativeCount = 0, ans = 0;
@@ -43,7 +67,7 @@ class DivideAndConquer // O(NlogN)
                }
     */
 
-  public:
+public:
     int64_t MSS(int arr[], int n)
     {
 
@@ -79,14 +103,16 @@ class DivideAndConquer // O(NlogN)
 
 class BetterNaiveSolution // O(n^2)
 {
-  public:
-    // rather than selecting subarray size first we will select the startindex first and calculate sum by just adding
+public:
+    // rather than selecting subarray size first we will select the startindex first and calculate sum by just adding the last element to it
+
     int64_t maxSubarraySum(int arr[], int n)
     {
         int64_t ans = INT64_MIN;
         for (int StartIndex = 0; StartIndex < n; ++StartIndex)
         {
             int64_t sum = 0;
+
             for (int SubArraySize = 1; SubArraySize <= n; ++SubArraySize)
             {
                 if (StartIndex + SubArraySize > n) // if it is out of bounds break.
@@ -104,9 +130,10 @@ class BetterNaiveSolution // O(n^2)
         return ans;
     }
 };
+
 class NaiveSolution // O(N^3)
 {
-  public:
+public:
     // if we go through all the subsequences, for n sized array there are n*(n+1)/2 sub-arrays.
     // T.C will be O(n^3)
     // here we are iterating the sub arrays by size first.

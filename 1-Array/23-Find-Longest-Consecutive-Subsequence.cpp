@@ -7,33 +7,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// The main idea is to find the minimum element of the sequence and then count++
+// Then store the length of the maximum size subarray
+
 class SolutionUsingHasing // O(N) & S(N)
 {
-  public:
-    int findLongestConseqSubseq(int arr[], int N)
+public:
+    int findLongestConseqSubseq(int arr[], int n)
     {
-        int Answer = 0;
-        unordered_set<int> Hash;
-        for (int i = 0; i < N; i++) // O(N)
-            Hash.insert(arr[i]);
+        unordered_set<int> hash;
+        int answer = 0;
 
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < n; i++)
+            hash.insert(arr[i]);
+
+        for (int i = 0; i < n; i++)
         {
             int count = 0;
-            if (Hash.find(arr[i] - 1) != Hash.end())
-                continue;
-            else
-                for (int x = arr[i]; Hash.find(x) != Hash.end(); x++)
-                    ++count;
-            Answer = max(count, Answer);
+
+            //Checking if this is the start of any subsequence & counting the elements including itself
+
+            if (hash.find(arr[i] - 1) == hash.end())
+                for (int j = arr[i]; hash.find(j) != hash.end(); j++)
+                    count++;
+
+            answer = max(count, answer);
         }
-        return Answer + 1;
+
+        return answer;
     }
 };
 
 class NaiveSolution // O(NLogN)
 {
-  public:
+public:
     int findLongestConseqSubseq(int arr[], int N)
     {
         int ans = 0, res = 0;

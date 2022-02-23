@@ -97,8 +97,8 @@ class MooreVotingAlgorithm // O(N) & S(1)
 
     // here question is bit different we have to return multiple values.
 
-    // for majority to be |n/k| the maximum numbers such can be k-1 only.
-    // so for 3 we will have 2 values only.
+    // for majority to be |n/k| the maximum numbers such can be k-1.
+    // so for 3 we can have maxmium 2 majority values.
     vector<int> majorityElement(vector<int> &nums)
     {
         int Candidate_1 = INT_MIN, Candidate_2 = INT_MIN, vote1 = 0, vote2 = 0;

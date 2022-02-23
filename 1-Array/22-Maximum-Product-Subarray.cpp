@@ -8,6 +8,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*Idea behind this solution is to keep the minimum and the maximum products as if a (-)ve number is 
+multiplied with the max it will become the new min and vice-versa
+*/
 class Solution // O(N) S(1)
 {
   public:
@@ -37,6 +40,8 @@ class Solution // O(N) S(1)
         return Answer;
     }
 };
+
+//Finding each and every Sub-array possible and checking the product of those sub-arrays
 
 class BetterNaiveSolution // O(n^2) S(1)
 {

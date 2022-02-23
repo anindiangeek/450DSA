@@ -24,14 +24,12 @@ void STLReverse(int a[], int size)
 {
     // we can reverse vectors, arrays, lists, anything container using reverse.
     // we have to mention first and last iterators to reverse it.
-
     // vectors and similar containers in STL
     // reverse({container_name}.begin(),{container_name}.end()) is used to reverse the entire container.
     // to reverse till a specfic segment we have to define an iterator to taht location or we can use
     // {container_name.begin()+ n} where n belongs to int class.
 
     reverse(a, a + size);
-
     // we use this for normal arrays, this also works for string, we can use .begin() in strings as well.
 }
 
