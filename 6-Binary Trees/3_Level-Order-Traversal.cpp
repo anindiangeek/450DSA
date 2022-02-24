@@ -4,38 +4,37 @@ https://practice.geeksforgeeks.org/problems/level-order-traversal/1/
 https://leetcode.com/problems/binary-tree-level-order-traversal/
 */
 
-
-//Using queue to store the elements and then storing them in another vector
-//level which stores all the elements of a level
+// Using queue to store the elements and then storing them in another vector
+// level which stores all the elements of a level
 class BFS
 {
-    vector<vector<int>>levelorder(Node*root)
+    vector<vector<int>> levelorder(Node *root)
     {
-        if(!root)
-        return {};
-        vector<int>ans;
+        if (!root)
+            return {};
+        vector<int> ans;
 
-        queue<Node*>q;
+        queue<Node *> q;
 
         q.push(root);
         ans.push_back({root});
 
-        while(!q.empty())
+        while (!q.empty())
         {
-            vector<int>level;
-            int Nodestoprocess=q.size();
+            vector<int> level;
+            int Nodestoprocess = q.size();
 
-            while(Nodestoprocess--)
+            while (Nodestoprocess--)
             {
-                Nodes*levelnode=q.front();
+                Nodes *levelnode = q.front();
 
-                if(levelnode->left)
+                if (levelnode->left)
                 {
                     q.push(levelnode->left);
                     level.push_back(levelnode->left->data);
                 }
 
-                if(levelnode->right)
+                if (levelnode->right)
                 {
                     q.push(levelnode->right);
                     level.push_back(levelnode->right->data);
@@ -44,37 +43,37 @@ class BFS
                 q.pop();
             }
 
-            if(level.size())
-            ans.push_back(level);
+            if (level.size())
+                ans.push_back(level);
         }
 
         return ans;
     }
 }
 
-//O(n^2)
-//We are going to each and every level one by one and then storing their children
+// O(n^2)
+// We are going to each and every level one by one and then storing their children
 class recursiveApproach
 {
-    public:
-    vector<int>ans;
-    void printlevelorder(node*root,int level)
+public:
+    vector<int> ans;
+    void printlevelorder(node *root, int level)
     {
-        if(level==0)
-        return;
-        if(level==1)
-        ans.push_back(root->data);
+        if (level == 0)
+            return;
+        if (level == 1)
+            ans.push_back(root->data);
         else
         {
-            printlevelorder(root->left,level-1);
-            printlevelorder(root->right,level-1);
+            printlevelorder(root->left, level - 1);
+            printlevelorder(root->right, level - 1);
         }
     }
-    vector<int> levelorder(node*root)
+    vector<int> levelorder(node *root)
     {
-        int h=height(root);
-        for(int i=1;i<=h;i++)
-        printlevelorder(root,i);
+        int h = height(root);
+        for (int i = 1; i <= h; i++)
+            printlevelorder(root, i);
         return ans;
     }
 }
