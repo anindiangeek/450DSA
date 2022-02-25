@@ -22,7 +22,7 @@ class OptimisedSolution // O(N) & S(H) recursive call stack.
      */
     int ans = 0;
 
-  public:
+public:
     int height(TreeNode *root)
     {
         if (!root)
@@ -44,7 +44,7 @@ class OptimisedSolution // O(N) & S(H) recursive call stack.
 
 class Bruteforce // O(N^2) && S(Height)
 {
-  public:
+public:
     int height(struct TreeNode *root)
     {
         // base case tree is empty
