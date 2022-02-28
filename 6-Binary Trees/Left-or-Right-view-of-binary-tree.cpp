@@ -21,7 +21,7 @@ using namespace std;
 
 class BFS // O(N) && S(Number of Nodes in a level of tree)
 {
-  public:
+public:
     vector<int> rightSideView(TreeNode *root)
     {
         if (!root)
@@ -57,7 +57,7 @@ class BFS // O(N) && S(Number of Nodes in a level of tree)
 class DFS // O(N) & S(LOGN)--S(N) recursive stack space
 {
     // DFS solution : we will maintain a level and upon reaching a new level we will add desired value to our answer.
-  public:
+public:
     // a recursive helper function.
     void Helper(TreeNode *root, vector<int> &v, int level)
     {

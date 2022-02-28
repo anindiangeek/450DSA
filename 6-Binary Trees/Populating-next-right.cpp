@@ -26,7 +26,7 @@ using namespace std;
 
 class SpecialBFS // O(N) && S(1)
 {
-  public:
+public:
     Node *connect(Node *root)
     {
         auto head = root;
@@ -51,7 +51,7 @@ class BFS // O(N) && S(Width of the tree)
     // in this method we transverse the tree using level order traversal from right to left
     // using the pointer to the previous element (i.e. next right) we go-on linking the tree nodes
     // we iterate from right to left so that we can mark the next of edge node as NULL first
-  public:
+public:
     Node *connect(Node *root)
     {
         if (!root)
@@ -86,7 +86,7 @@ class DFS // O(N) && S(height of binary tree)
     // in this method we transverse the tree using pre order traversal recursively
     // connecting the links to the child nodes at each level
     // first we connect the left child next to right, then
-  public:
+public:
     Node *connect(Node *root)
     {
         if (!root)
@@ -107,7 +107,7 @@ class DFS // O(N) && S(height of binary tree)
 
 class Node
 {
-  public:
+public:
     int val;
     Node *left;
     Node *right;
