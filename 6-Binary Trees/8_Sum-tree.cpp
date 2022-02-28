@@ -48,7 +48,7 @@ We can do better than that.
 
 */
 
-class optimisedSol
+class optimisedSol //O(n) & S(1)
 {
 
     bool isLeaf(Node *root)
