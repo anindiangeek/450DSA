@@ -39,3 +39,5 @@ temp*.cpp
 
 #vscode settings files
 *.json
+
+*.vscode
