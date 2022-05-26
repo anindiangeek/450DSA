@@ -15,7 +15,7 @@ using namespace std;
 
 class leetCodeSol
 {
-    void removeLoop(Node *head)
+    void findStartingOfTheLoop(Node *head)
     {
         if (head == NULL || head->next == NULL)
             return NULL;
