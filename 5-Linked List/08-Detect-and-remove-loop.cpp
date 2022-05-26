@@ -7,9 +7,11 @@ GFG: https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1/
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-
-*/
+/**
+ * Intution: First detect a loop in the linked list and when fast==slow, Apply the algorithm to find the
+ * starting point of that loop and keep a pointer trailing the slow pointer, i.e. a pointer just behind slow
+ * which will be our pointer to the last node of the loop.
+ */
 
 class leetCodeSol
 {
