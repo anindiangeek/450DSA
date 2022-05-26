@@ -66,7 +66,7 @@ class gfgSolution
                     fast = fast->next;
                 }
 
-                removenext->next = nullptr;
+                removenext->next = nullptr; // Very important to do this here, because if the loop is not broken here, then the loop will go on forever as it is in a loop
             }
         }
     }
