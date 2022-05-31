@@ -21,7 +21,7 @@ struct ListNode
 
 class Solution
 {
-  public:
+public:
     ListNode *removeNthFromEnd(ListNode *head, int n)
     {
         // nth element from end will be length-i+1 th element form the begining.
