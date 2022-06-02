@@ -8,8 +8,8 @@ using namespace std;
 
 /**
  * Intution is simple, we will go on iterating and reversing the list till our counter 'i' is less than k
- * After that we will check if there is any list left or not and if it is then we will call the function again
- * On the rest of the list
+ * After that we will check if there is any list left or not and if it is then we will call the function
+ * again on the rest of the list
  */
 class recSolution
 {
